@@ -1,15 +1,10 @@
-export type Brand<T, B extends string> = T & { readonly __brand: B };
-
-export type UUID = Brand<string, "UUID">;
-export type ISOTimestamp = Brand<string, "ISOTimestamp">;
-
-export function asUUID(value: string): UUID {
-  return value as UUID;
-}
-
-export function asISOTimestamp(value: string): ISOTimestamp {
-  return value as ISOTimestamp;
-}
+/**
+ * UUIDs and timestamps are plain strings at the type level. Branding
+ * them caused too much friction with zod/JSON boundaries; validators at
+ * the ingress points are where shape is enforced.
+ */
+export type UUID = string;
+export type ISOTimestamp = string;
 
 export interface PipelineError {
   status: "error";

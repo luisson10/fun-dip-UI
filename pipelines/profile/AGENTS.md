@@ -4,7 +4,7 @@ Builds and edits startup profiles conversationally. Called by the chat pipeline 
 
 ## Contract
 
-See `docs/PIPELINE_CONTRACTS.md` for the full I/O spec. Summary:
+See `.claude/docs/PIPELINE_CONTRACTS.md` for the full I/O spec. Summary:
 
 - Input: `{ profile_id, mode: "create" | "update" | "read", facts?, context? }`
 - Output: `{ status, profile_id, delta, profile_summary }`

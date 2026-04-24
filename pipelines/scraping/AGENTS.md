@@ -4,7 +4,7 @@ Two modes. `full_scrape` hits the web via Tinyfish and populates the global `pro
 
 ## Contract
 
-See `docs/PIPELINE_CONTRACTS.md` for the full I/O spec.
+See `.claude/docs/PIPELINE_CONTRACTS.md` for the full I/O spec.
 
 ## Required components
 

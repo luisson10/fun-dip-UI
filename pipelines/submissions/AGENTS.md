@@ -4,7 +4,7 @@ Constructs submission payloads from profile and program data, requests missing i
 
 ## Contract
 
-See `docs/PIPELINE_CONTRACTS.md` for the full I/O spec.
+See `.claude/docs/PIPELINE_CONTRACTS.md` for the full I/O spec.
 
 Input: `{ profile_id, program_id, submission_id?, action: "prefill_only" | "submit", provided_data? }`
 Output: one of `prefilled | needs_input | submitted | error`.
@@ -78,7 +78,7 @@ Emit one of:
 - `submission_needs_input`: when status becomes or remains `awaiting_user_input`.
 - `submission_submitted`: when status transitions to `submitted`.
 
-Both per `docs/PIPELINE_CONTRACTS.md`. HMAC-signed.
+Both per `.claude/docs/PIPELINE_CONTRACTS.md`. HMAC-signed.
 
 ## Does not send email
 

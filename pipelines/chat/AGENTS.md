@@ -4,7 +4,7 @@ User-facing copilot. Persistent on the right side of every page in the app. Runs
 
 ## Contract
 
-See `docs/PIPELINE_CONTRACTS.md` for the full I/O spec. Summary:
+See `.claude/docs/PIPELINE_CONTRACTS.md` for the full I/O spec. Summary:
 
 - Input: `{ user_id, profile_id, conversation_id, current_page, current_selection, message }`
 - Output: `{ status, reply, conversation_id, tool_calls, surfaced }`

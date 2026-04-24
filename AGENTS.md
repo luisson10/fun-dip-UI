@@ -5,9 +5,9 @@ You are building Fundip, an agent-driven funding program discovery and submissio
 ## Read order
 
 1. This file.
-2. `docs/ARCHITECTURE.md`: layered view, data flow diagram, weekly cycle, submission cycle.
-3. `docs/GHOST_SCHEMA.md`: collections, fields, ownership, indexes.
-4. `docs/PIPELINE_CONTRACTS.md`: pipeline I/O, callbacks, invocation matrix.
+2. `.claude/docs/ARCHITECTURE.md`: layered view, data flow diagram, weekly cycle, submission cycle.
+3. `.claude/docs/GHOST_SCHEMA.md`: collections, fields, ownership, indexes.
+4. `.claude/docs/PIPELINE_CONTRACTS.md`: pipeline I/O, callbacks, invocation matrix.
 5. The pipeline you are working on: `pipelines/<name>/AGENTS.md`.
 6. The existing frontend scaffold (see "Frontend exists already" below).
 
@@ -24,7 +24,7 @@ Before defining any type, schema, or API contract that crosses the frontend boun
 - Look at the chat panel component: how it sends messages, what payload shape it expects back, how it renders tool-call results if at all.
 - If the frontend defines shared TypeScript types (likely in a shared package within the monorepo), those types are the contract. Match Ghost fields to them, not the other way around.
 
-If a frontend expectation conflicts with the logical schema in `docs/GHOST_SCHEMA.md`, flag it in the PR. Do not quietly diverge.
+If a frontend expectation conflicts with the logical schema in `.claude/docs/GHOST_SCHEMA.md`, flag it in the PR. Do not quietly diverge.
 
 ## Non-negotiable technology choices
 
@@ -83,11 +83,14 @@ fundip/
   packages/
     shared-types/         # TS types shared between frontend and backend
     rocketride-client/    # wrapped SDK client used by the app layer
-  docs/
-    ARCHITECTURE.md
-    GHOST_SCHEMA.md
-    PIPELINE_CONTRACTS.md
+  .claude/
+    docs/                 # PRD / requirements, auto-loaded for Claude sessions
+      ARCHITECTURE.md
+      GHOST_SCHEMA.md
+      PIPELINE_CONTRACTS.md
+    settings.json         # shared Claude Code config (team)
   AGENTS.md               # this file
+  CLAUDE.md               # Claude Code entry point, imports AGENTS.md
 ```
 
 If the existing scaffold uses different paths, adapt. The logical boundaries are what matters.
